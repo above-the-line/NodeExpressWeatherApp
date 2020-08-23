@@ -27,12 +27,12 @@ paths:
         description: "API Key required to use service"
         required: false
       - name: "lat"
-        type: "integer"
+        type: "number"
         in: "query"
         description: "City Latitude"
         required: true
       - name: "lon"
-        type: "integer"
+        type: "number"
         in: "query"
         description: "City Longitude"
         required: true

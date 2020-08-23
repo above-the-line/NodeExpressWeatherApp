@@ -1,9 +1,8 @@
 const express = require("express"),
-  
   config = require("./config/main_config"),
-  
-  dailyForecastRouter = require("./router/dailyForecastRouter");
-  
+  dailyForecastRouter = require("./routes/dailyForecastRoute"),
+  getCityWeatherDataRouter = require("./routes/getCityWeatherDataRoute"),
+  insertWeatherDataRouter = require('./routes/insertWeatherDataRoute');
   
 
 // Manage api response.
@@ -40,11 +39,10 @@ module.exports = function(app) {
   app.use("/api", apiRoutes);
   
   dailyForecastRouter.init(apiRoutes, manageResponse);
+  insertWeatherDataRouter.init(apiRoutes, manageResponse)
   
-  // jobRouter.init(apiRoutes, requireAuth, manageResponse);
-  //=========================
-  // Auth Routes
-  //=========================
+  getCityWeatherDataRouter.init(apiRoutes, manageResponse)
+
 
   // Ping routes
   // i.e. http://localhost:8080/api/ping

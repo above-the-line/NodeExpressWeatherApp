@@ -7,7 +7,7 @@ module.exports.swagger_init = function(app, express) {
   
     const routerSwagger = express.Router();
     const options = YAML.load("./data/swagger/weatherAPI.yaml");
-    options.host = config.host_swagger + ":" + 8083;
+    options.host = config.host_swagger + ":" + 8080;
     // const swaggerDoc = swaggerJSDoc(options)
     // swaggerModelValidator(swaggerDoc)
   

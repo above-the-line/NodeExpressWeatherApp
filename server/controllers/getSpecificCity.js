@@ -1,0 +1,1 @@
+DailyForecastSchema.findOne({city: "Sydney"}, function(err,obj) { console.log(obj); });
