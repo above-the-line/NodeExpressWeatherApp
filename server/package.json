@@ -1,0 +1,30 @@
+{
+  "name": "mongo-express-restful",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/above-the-line/NodeExpressWeatherApp.git"
+  },
+  "author": "Avi Michael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/above-the-line/NodeExpressWeatherApp/issues"
+  },
+  "homepage": "https://github.com/above-the-line/NodeExpressWeatherApp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-status-monitor": "^1.3.3",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.10.0",
+    "swagger-model-validator": "^3.0.19",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
+  }
+}

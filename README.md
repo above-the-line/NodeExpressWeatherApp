@@ -19,7 +19,33 @@ Display Carousel
 When user clicks on a city, that city’s data is called and displayed
 
 
+
+# Steps for Dev Development
+## Set up Mongo Database
+1. navigate to ./docker-utils
+2. docker-compose -f docker-compose-shared-mongo.yml up
+
+## Set environment variables that will be used by Express Server
+1. navigate to ./server
+2. edit .env
+
+
+# Swagger
+1. Visit http://localhost:3001/api/docs/ for docs
+
+
+# API
+1. /api/dailyForecast/list
+
+
+
+
+
+
+
 # Steps to Deploy
+
+
 To continue development:
 Clone repo
 Docker compose up for backend (frontend is all static HTML files)

@@ -1,0 +1,46 @@
+# Launch this before server
+# Use this to up a mongo container with a network. We create a network because we will need to reach 
+# mongo from server and we need to share with other apps this container.
+version: '3.5'
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports: 
+      - "27017:27017"
+    expose:
+      - "27017"
+    volumes:
+      - ~/data/mongodb_data/:/data/db
+    networks:
+      - mongo_network
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+      - MONGO_INITDB_DATABASE=weatherAPI
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    networks:
+      - mongo_network
+    restart: unless-stopped
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=pass
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=pass
+      - ME_CONFIG_MONGODB_SERVER=mongo
+    links:
+      - "mongo"
+    depends_on:
+      - "mongo"
+
+networks:
+  mongo_network:
+    name: mongo_custom_network
+
+
+  

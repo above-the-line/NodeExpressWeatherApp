@@ -1,0 +1,49 @@
+swagger: "2.0"
+info:
+  description: "REST API with Swagger doc"
+  version: "1.0.0"
+  title: "Weather API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "play.right.productions@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/api"
+schemes:
+- "http"
+paths:
+  /forecast/daily:
+    get:
+      description: "Get City Daily Forecast"
+      tags:
+      - "City Weather Daily Forecast"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "APIKey" 
+        type: "string"
+        in: "query"
+        description: "API Key required to use service"
+        required: false
+      - name: "lat"
+        type: "number"
+        in: "query"
+        description: "City Latitude"
+        required: true
+      - name: "lon"
+        type: "number"
+        in: "query"
+        description: "City Longitude"
+        required: true
+      responses:
+         200:
+           description: "OK to list daily weather info"
+  /ping:
+    get:
+      description: "Ping Api Rest"
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Ping response
